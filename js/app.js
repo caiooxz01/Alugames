@@ -4,7 +4,7 @@ function alterarStatus(id) {
     let botao = jogo.querySelector('.dashboard__item__button');
     
     if (imagem.classList.contains('dashboard__item__img--rented')) {
-        let resposta = confirm('Deseja devolver o livro?');
+        let resposta = confirm('Deseja devolver o jogo?');
         if (resposta) {
             imagem.classList.remove('dashboard__item__img--rented');
             botao.classList.remove('dashboard__item__button--return');
@@ -15,5 +15,11 @@ function alterarStatus(id) {
         botao.classList.add('dashboard__item__button--return');
         botao.textContent = 'Devolver';
     };
+    mostrarQuantosJogosEstaoAlugados();
 };
+
+function mostrarQuantosJogosEstaoAlugados () {
+    let alugados = document.querySelectorAll('.dashboard__item__img--rented');
+    console.log(alugados.length);
+}
 
